@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+
+        <meta charset="utf-8">
+        <script src="https://developer.edamam.com/attribution/badge.js"></script>
+        
+        <!-- css -->
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/style2.css" rel="stylesheet" type="text/css">
+        <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+        
+        <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+        <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+        <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+        <script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+        <script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+        <script type="text/javascript" src="lib/url-template/url-template.js"></script>
+        <script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+        <script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+        <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+        <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+        <script type="text/javascript" src="apigClient.js"></script>
+
+        <script type="text/javascript" src="js/salad.js"></script>
+
+    </head>
+
+    <body>
+
+        <header>
+          <div class="navbar">
+            <!-- <div class="container"> -->
+                <ul class="navbar-header">
+                  <li><h3>Customization</h3></li>
+                  <li style="float:right"><div id="edamam-badge" data-color="white"></div>
+                  <li style="float:right"><a href="index.html" class="home">Home</a></li>
+                </ul>
+
+            <!-- </div> -->
+        </div>
+        </header>
+
+        <!-- <header>
+          <div class="navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <h3>Customization</h3>
+                </div>
+                <div id="edamam-badge" style="float:right" data-color="white"></div>
+            </div>
+        </div>
+        </header> -->
+  
+        <section class="banner">
+          <img src="img/banner1.jpg" alt="" style="width:100%">
+          <div class="titlebottom">
+            <h3>Ready for a healthy life?</h3>
+            <p>Create your own salad bowl!</p>
+            </div>
+        </section>
+    
+
+        <div class="clear">
+            <nav class="menu">
+            <!-- <ul>
+                <li><a class="home" href="home.html">Home</a></li>
+                <li><a href="category1.html">Category1</a></li>
+                <li><a href="category2.html">Category2</a></li>
+            </ul> -->
+            <ul class = "tab">
+<!--                 <li><button class="btn active" onclick="filterSelection('all')"> Show all</button></li>
+                <li><button class="btn" onclick="filterSelection('cars')"> Cars</button></li>
+                <li><button class="btn" onclick="filterSelection('animals')"> Animals</button></li>
+                <li><button class="btn" onclick="filterSelection('fruits')"> Fruits</button></li>
+                <li><button class="btn" onclick="filterSelection('colors')"> Colors</button></li> -->
+                <!-- #aaa -->
+                <li><button class="btn active" style="background-color:#555; color: white;"> Ingredients</button></li>
+                <li><button class="tablinks" onclick="openCatagory(event, 'Protein')" id="defaultOpen">Protein</button></li>
+                <li><button class="tablinks" onclick="openCatagory(event, 'Rice')">Rice</button></li>
+                <li><button class="tablinks" onclick="openCatagory(event, 'Vegetable')">Vegetable</button></li> 
+                <li><button class="tablinks" onclick="openCatagory(event, 'Other')">Other</button></li>           
+
+            </ul>
+            </nav>
+        </div>
+
+      <div class="mainpage">
+        <div class="column_left">
+                  <ul class="table" id="Protein">
+
+                      <!-- <li>
+                       <div class="center">
+                          <div><a href="prod1.html"><img src="img/prod1.jpg"  alt="" style="height:100px"></a></div>
+                          <div class="desc">
+                              <a href="prod1.html">Product 1</a>
+                              <input type="number" id="prod1" name = "myNumber" value="0" min="0" oninput="numChange()">
+                              <a class="button" href="#">Add</a>
+                          </div>
+                        </div>
+                      </li> -->
+                    </ul>
+
+                    <ul class="table" id="Rice">
+                      <!-- <li>
+                        <div class="center">
+                            <div><a href="prod2.html"><img src="img/prod2.jpg"  alt="" style="height:100px"></a></div>
+                            <div class="desc">
+                              <a href="prod2.html">Product 2</a>
+                              <input type="number" id= "prod2" name = "myNumber" value="0" min="0" oninput="numChange()">
+                            </div>
+                        </div>
+                      </li> -->
+                    </ul>
+                    <ul class="table" id="Vegetable">
+
+                    </ul>
+
+                    <ul class="table" id="Other">
+
+                    </ul>
+
+                    <div id="id01" class="modal">
+                      
+                      <div class="modal-content animate">
+                        
+                        <div class="containerAdd">
+                          <label for="uname"><b>Ingredient Name</b></label>
+                          <input type="text" placeholder="Enter Ingredient Name" name="uname" id="foodName"required>
+                            
+                          <button type="button" onclick="search()" class="searchbtn">Get Nutrition</button>
+                        </div>
+
+                        <div class="containerAdd" style="background-color:#f1f1f1">
+                          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                          
+                        </div>
+                      </div>
+                    </div>
+
+        </div>
+
+        <div class="column_right">
+          <h2>Nutrition Table</h2>
+          <span> * 100g per quantity </span>
+
+
+          <table id ="result">
+            <tr>
+              <th style="width:50%">Ingredients</th>
+              <th>Quantity</th>
+              <th>Energy(kcal)</th>
+              <th>Fat(g)</th>
+              <th>Protein(g)</th>
+            </tr>
+            <tr>
+              <td style="font-weight: bold">Total</td>
+              <td></td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+
+          </table>
+          <!-- <p>Some text..</p> -->
+          <!-- <ul id ="result">
+
+          </ul> -->
+        </div>
+      </div>
+
+
+        
+
+        <footer>
+            <p>
+			<span>Copyright &copy; 2018.Company name All rights reserved. GAO XUAN xg2278
+			</p>
+        </footer>
+
+    </body>
+</html>

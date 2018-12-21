@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Online Salad Bar</title>
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      /*
+
+Built for http://thecolour-green.com
+
+© 2013, Mohamed Moustafa. 
+http://mmoustafa.com
+
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise|Raleway:400,800);
+
+*,*:after,*:before {
+    margin: 0px;
+    padding: 0px;
+    font-family: STheiti, 'Raleway', 'Century Gothic', sans-serif;
+    color: #00AB3F;
+    font-weight: 400px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    font-size: 24px;
+ /* media query edit size */
+    width: 100%;
+}
+
+br {
+    line-height: 1em;
+}
+
+*::selection {
+    background-color: #BF3;
+    color: #FFF;
+}
+
+*::-moz-selection {
+    background-color: #BF3;
+    color: #FFF;
+}
+
+h1,h2,h3,h4,h5 {
+    padding: 0.4em 0 0.5em 0;
+    line-height: 1em;
+    font-weight: 400;  
+    font-family: STheiti, 'Raleway', 'Century Gothic', sans-serif;
+}
+
+h1 {
+    font-size: 4em;
+    padding-left: 0.25em;
+    letter-spacing: -0.05em;
+}
+
+h2 {
+    font-size: 3.2em;
+    padding-left: 0.3125em;
+}
+
+h3 {
+    font-size: 2.4em;
+    padding-left: 0.4167em;
+}
+
+h4 {
+    font-size: 1.6em;
+    padding-left: 0.625em;
+}
+
+h5 {
+    font-size: 1.4em;
+}
+
+p {
+    padding: 1em;
+    color: #999;
+    line-height: 1.2;
+}
+
+p img {
+    float: left;
+    margin: 0 10px 2px 0;
+    width: 5.8em;
+    border-radius: 5px;
+}
+
+body > div {
+    padding: 2em 1em 2em 1em;
+}
+
+.bold,strong {
+    font-weight: 800;
+}
+
+.center {
+    text-align: center;
+}
+
+.inline {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+
+a:hover {
+    color: #BF3;
+}
+
+
+
+button.lgbg:hover {
+    background: #CF6;
+}
+
+
+
+hr {
+    border: 0;
+    outline: 0;
+    height: 1px;
+    background: #00AB3F;
+    box-shadow: 0 0 1px;
+    position: relative;
+    margin: 10px 0 10px 0;
+}
+/*hr:after{
+	content: '&';
+	text-shadow: 0 0 1px;
+	font-size: 14px;
+	padding:3px;
+	position:absolute;
+	top: -11px;
+	left:50%;
+	margin-left:-20px;
+	}*/
+	
+
+
+button {
+    border: 0;
+    outline: 0;
+    background: #00AB3F;
+    font-family: 'Raleway', 'Century Gothic', sans-serif;
+    color: #FFF;
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 10px 0;
+    -webkit-transition: all 0.2s ease;
+}
+
+button:hover {
+    background: #0C6;
+}
+
+button:active {
+    color: #00AB3F;
+}
+
+.big {
+    font-size: 2em;
+    padding: 20px 35px 20px 35px;
+}
+
+.medium {
+    font-size: 1.5em;
+    padding: 13px 25px 13px 25px;
+}
+
+.small {
+    font-size: 1em;
+    padding: 9px 17px 9px 17px;
+}
+
+
+
+
+.dbh {
+    line-height: 2em;
+}
+
+.trh {
+    line-height: 3em;
+}
+
+.preview-container {
+    width: 96%;
+    margin: auto;
+    list-style: none;
+    overflow: hidden;
+    -webkit-transition: all 0.2s ease-out;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.preview {
+    width: 270px;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+    background: #FFF;
+    border-radius: 3px;
+    -moz-user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+	/*-webkit-transition:all 0.2s ease;*/
+}
+
+.preview:hover {
+    box-shadow: 0 0 8px #00AB3F;
+}
+
+.preview:hover li {
+    margin: 10px auto;
+}
+
+.preview h4 {
+    margin: 10px;
+    padding: 0;
+    color: #999;
+}
+
+.preview button {
+    margin: 0;
+    display: none;
+}
+
+.preview:hover button {
+    display: block;
+}
+
+.preview img {
+    width: 100%;
+}
+
+.preview p {
+    padding: 0 0 10px 0;
+}
+
+.preview h5 {
+    padding: 10px 0;
+}
+
+.wall {
+    width: 96%;
+    margin: 20px auto;
+    padding: 20px 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.make-your-own {
+    background: #00AB3F;
+    color: #FFF;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0.5em;
+    font-size: 2em;
+}
+
+.make-your-own:hover {
+    box-shadow: none !important;
+}
+
+    </style>
+
+</head>
+
+<body background="img/salad.jpg">
+
+<div class="lgbg" id="objects">
+    <h3>Your salads bowl starts from here.</h3>
+    <ul class="preview-container objects">
+    	<button class="preview make-your-own bold" onclick="window.location.href = 'customize.html'">
+        	Customize Your Salad Bowl
+        </button>        
+        <button class="preview make-your-own bold" onclick="window.location.href = 'https://s3.us-east-2.amazonaws.com/myphoto.xyw/chat.html'">
+            Search for your own recipe
+        </button>
+
+                
+    </ul>
+</div>
+</body>
+
+</html>
