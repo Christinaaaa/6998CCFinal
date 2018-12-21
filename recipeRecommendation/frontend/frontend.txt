@@ -1,0 +1,1 @@
+include html, javascript and related css and api gateway sdk
