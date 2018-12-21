@@ -1,4 +1,4 @@
-6998 CC Final - Diet Assistant
+# 6998 CC Final - Diet Assistant
 Our web application supports two functions:
 
 - Customize your salad bowl
